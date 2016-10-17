@@ -1,10 +1,12 @@
 var Calculator = function() {
     var self = this;
+    var defaultValue = 0;
+
 
     self.add = function(numbers) {
-      if (!numbers) {
-          return 0;
-      }
+        if (!numbers) {
+            return defaultValue;
+        }
 
         return 1;
     };
