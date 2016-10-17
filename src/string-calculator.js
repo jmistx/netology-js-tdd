@@ -15,7 +15,7 @@ var Calculator = function() {
     };
 
     function parseMultipleNumbers(input) {
-        var numbers = input.split(',');
+        var numbers = input.replace(/\n/g, ",").split(',');
 
         return numbers.reduce(function(a, b) {
             return parseSingleNumber(a) + parseSingleNumber(b);
@@ -27,7 +27,7 @@ var Calculator = function() {
     }
 
     function isSingleNumber(numbers) {
-        return numbers.indexOf(',') === -1;
+        return numbers.indexOf(',') === -1 && numbers.indexOf('\n') === -1;
     }
 }
 
