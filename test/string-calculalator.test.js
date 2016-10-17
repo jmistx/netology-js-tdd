@@ -7,6 +7,14 @@ describe('string calculator', function() {
 
         var result = calculator.add("");
 
-        assert.equal(result, -1);
+        assert.equal(result, 0);
+    });
+
+    it('should return single number if imput is that single number', function() {
+        var calculator = new Calculator();
+
+        var sum = calculator.add(1);
+
+        assert.equal(sum, 1);
     });
 });
