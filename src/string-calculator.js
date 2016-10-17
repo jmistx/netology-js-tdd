@@ -15,7 +15,7 @@ var Calculator = function() {
     };
 
     function parseMultipleNumbers(input) {
-        var numbers = input.replace(/\n/g, ",").split(',');
+        var numbers = input.split(/[\n,]/);
 
         return numbers.reduce(function(a, b) {
             return parseSingleNumber(a) + parseSingleNumber(b);
