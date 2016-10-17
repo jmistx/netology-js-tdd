@@ -8,6 +8,9 @@ var Calculator = function() {
         }
 
         return parseInt(numbers);
+
+
+        
     };
 
 }
