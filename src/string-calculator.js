@@ -11,10 +11,13 @@ var Calculator = function() {
             return parseSingleNumber(input);
         }
 
-        var numbers = input.split(',');
-
-        return parseSingleNumber(numbers[0]) + parseSingleNumber(numbers[1]);;
+        return parseTwoNumbers(input);
     };
+
+    function parseTwoNumbers(input) {
+        var numbers = input.split(',');
+        return parseSingleNumber(numbers[0]) + parseSingleNumber(numbers[1]);;
+    }
 
     function parseSingleNumber(numberAsString) {
         return parseInt(numberAsString, 10);
