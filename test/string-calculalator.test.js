@@ -34,7 +34,13 @@ describe('string calculator should', function() {
         assert.equal(sum, 1 + 2);
     });
 
+    it('return sum of any two comma separated values', function() {
+        var calculator = createCalculator();
 
+        var sum = calculator.add('123,456')
+
+        assert.equal(sum, 123 + 456);
+    });
 
     function createCalculator() {
         return new Calculator();

@@ -2,16 +2,18 @@ var Calculator = function() {
     var self = this;
     var defaultValue = 0;
 
-    self.add = function(numbers) {
-        if (!numbers) {
+    self.add = function(input) {
+        if (!input) {
             return defaultValue;
         }
 
-        if (isSingleNumber(numbers)) {
-            return parseSingleNumber(numbers);
+        if (isSingleNumber(input)) {
+            return parseSingleNumber(input);
         }
 
-        return parseSingleNumber(numbers[0]) + parseSingleNumber(numbers[2]);;
+        var numbers = input.split(',');
+
+        return parseSingleNumber(numbers[0]) + parseSingleNumber(numbers[1]);;
     };
 
     function parseSingleNumber(numberAsString) {
