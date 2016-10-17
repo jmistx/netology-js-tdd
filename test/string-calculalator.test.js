@@ -26,6 +26,16 @@ describe('string calculator should', function() {
         assert.equal(sum, 2);
     });
 
+    it('return sum of two one-digit comma separated values', function() {
+        var calculator = createCalculator();
+
+        var sum = calculator.add('1,2')
+
+        assert.equal(sum, 1 + 2);
+    });
+
+
+
     function createCalculator() {
         return new Calculator();
     }

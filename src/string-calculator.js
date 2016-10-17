@@ -7,11 +7,20 @@ var Calculator = function() {
             return defaultValue;
         }
 
-        return parseInt(numbers);
+        if (isSingleNumber(numbers)) {
+            return parseSingleNumber(numbers);
+        }
 
-
-        
+        return parseSingleNumber(numbers[0]) + parseSingleNumber(numbers[2]);;
     };
+
+    function parseSingleNumber(numberAsString) {
+        return parseInt(numberAsString, 10);
+    }
+
+    function isSingleNumber(numbers) {
+        return numbers.indexOf(',') === -1;
+    }
 
 }
 
