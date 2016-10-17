@@ -10,12 +10,20 @@ describe('string calculator', function() {
         assert.equal(result, 0);
     });
 
-    it('should return single number if imput is that single number', function() {
+    it('should return single number if input is that single number', function() {
         var calculator = createCalculator();
 
-        var sum = calculator.add(1);
+        var sum = calculator.add('1');
 
         assert.equal(sum, 1);
+    });
+
+    it('should return any single numbers if input is that single number', function() {
+        var calculator = createCalculator();
+
+        var sum = calculator.add('2')
+
+        assert.equal(sum, 2);
     });
 
     function createCalculator() {
