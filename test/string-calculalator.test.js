@@ -42,6 +42,14 @@ describe('string calculator should', function() {
         assert.equal(sum, 123 + 456);
     });
 
+    it('return sum of any amout of comma separated values', function() {
+        var calculator = createCalculator();
+
+        var sum = calculator.add('1,2,3,4,5')
+
+        assert.equal(sum, 1 + 2 + 3 + 4 + 5);
+    });
+
     function createCalculator() {
         return new Calculator();
     }

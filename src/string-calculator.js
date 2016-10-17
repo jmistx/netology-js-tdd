@@ -11,12 +11,15 @@ var Calculator = function() {
             return parseSingleNumber(input);
         }
 
-        return parseTwoNumbers(input);
+        return parseMultipleNumbers(input);
     };
 
-    function parseTwoNumbers(input) {
+    function parseMultipleNumbers(input) {
         var numbers = input.split(',');
-        return parseSingleNumber(numbers[0]) + parseSingleNumber(numbers[1]);;
+
+        return numbers.reduce(function(a, b) {
+            return parseSingleNumber(a) + parseSingleNumber(b);
+        });
     }
 
     function parseSingleNumber(numberAsString) {
@@ -26,7 +29,6 @@ var Calculator = function() {
     function isSingleNumber(numbers) {
         return numbers.indexOf(',') === -1;
     }
-
 }
 
 module.exports = Calculator;
