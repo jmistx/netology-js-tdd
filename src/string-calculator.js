@@ -18,7 +18,7 @@ var Calculator = function() {
         var numbers = input.split(/[\n,]/);
 
         return numbers.reduce(function(a, b) {
-            return parseSingleNumber(a) + parseSingleNumber(b) + 5;
+            return parseSingleNumber(a) + parseSingleNumber(b);
         });
     }
 
