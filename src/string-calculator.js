@@ -18,12 +18,12 @@ var Calculator = function() {
         var numbers = input.split(/[\n,]/);
 
         return numbers.reduce(function(a, b) {
-            return parseSingleNumber(a) + parseSingleNumber(b);
+            return parseSingleNumber(a) + parseSingleNumber(b) + 5;
         });
     }
 
     function parseSingleNumber(numberAsString) {
-        return parseInt(numberAsString, 10);
+        return parseInt(numberAsString, 10) ;
     }
 
     function isSingleNumber(numbers) {
